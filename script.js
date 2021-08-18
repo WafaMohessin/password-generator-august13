@@ -20,31 +20,38 @@ var password = "A";
 
 function generatePassword(){
 
-var passwordLength = prompt("Please enter a password that contains 8-128 characters.");
-var numbers = confirm("Your password should have at least one number.");
-var caps = confirm("Your password should have at least one uppercase."); 
-var lower = confirm("Your password should have at least one lowercase.");
-var special = confirm("Your password should have at least one special character.");
+  var passwordLength = prompt("Enter a number between 8 and 128");
+  var numbers = confirm("Your password should have at least one number.");
+  var caps = confirm("Your password should have at least one uppercase."); 
+  var lower = confirm("Your password should have at least one lowercase.");
+  var special = confirm("Your password should have at least one special character.");
 
 
-// Write password to the #password input
- for (var i = 0; i < passwordLength; i++) {
-   
-    console.log(validChars.length)
 
-    var num = getrandome (validChars.length)
-    console.log(num)
-    console.log(validChars[num])
+passwordLength=parseInt(passwordLength)
+
+console.log(passwordLength, typeof passwordLength)
+
+  // Write password to the #password input
+  for (var i = 0; i < passwordLength; i++) {
     
-    password+= validChars[num]
-    console.log(password)
-    return password
+    console.log(i)
+      console.log(validChars.length)
 
+      var num = getrandome (validChars.length)
+      console.log(num)
+      console.log(validChars[num])
+      
+      password+= validChars[num]
+      console.log(password)
+     
+  }
 
-while (validChars == true) {
-  console.log(validChars)
+  return password
+  /*while (validChars == true) {
+    console.log(validChars)
 
-}
+  }*/
 }
 
 
@@ -59,7 +66,9 @@ while (validChars == true) {
   
 
 function writePassword() {
+
   password = generatePassword();
+  console.log(password)
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
