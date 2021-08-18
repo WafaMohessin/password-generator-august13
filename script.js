@@ -38,15 +38,15 @@ var special = confirm("Your password should have at least one special character.
     
     password+= validChars[num]
     console.log(password)
-    return Character_pool
- }
+    return password
+
+
+while (validChars == true) {
+  console.log(validChars)
+
+}
 }
 
-// while loop 
-
-while (Character_pool[Character_pool]){
-  text+= Character_pool[i];i++;
-}
 
 //document.getElementById(password) . innerHTML = text;
 
