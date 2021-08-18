@@ -48,10 +48,7 @@ console.log(passwordLength, typeof passwordLength)
   }
 
   return password
-  /*while (validChars == true) {
-    console.log(validChars)
-
-  }*/
+ 
 }
 
 
