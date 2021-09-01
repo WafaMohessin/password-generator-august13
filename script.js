@@ -9,22 +9,42 @@ var numbers = [0,1,2,3,4,5,6,7,8,9]
 var uppercase =["A","B","C","D","E","F","G","H","I","J","K","L","M","M","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 var lowercase = ["a","b","c","d","e", "f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 var symbols = ["!","@","#","$","%","^","&","*",(","),"_","=","+","?","/","|","{","}","[","]","<",">"]
+
 var Character_pool= []
  
 
-var validChars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","M","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e", "f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","!","@","#","$","%","^","&","*",(","),"_","=","+","?","/","|","{","}","[","]","<",">", "0","1","2","3","4","5","6","7","8","9"]
+// var validChars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","M","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e", "f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","!","@","#","$","%","^","&","*",(","),"_","=","+","?","/","|","{","}","[","]","<",">", "0","1","2","3","4","5","6","7","8","9"]
 
-var passwordLength = 12;
-var password = "A";
+//var passwordLength = 12;
+var password = " ";
 
 
 function generatePassword(){
 
   var passwordLength = prompt("Enter a number between 8 and 128");
-  var numbers = confirm("Your password should have at least one number.");
-  var caps = confirm("Your password should have at least one uppercase."); 
-  var lower = confirm("Your password should have at least one lowercase.");
-  var special = confirm("Your password should have at least one special character.");
+  var numbersQ = confirm("Your password should have at least one number.");
+  var capsQ = confirm("Your password should have at least one uppercase."); 
+  var lowerQ = confirm("Your password should have at least one lowercase.");
+  var specialQ = confirm("Your password should have at least one special character.");
+
+
+
+if (numbersQ){
+  //console.log ("user want to add a number")
+  Character_pool.push(...numbers)
+} 
+if (capsQ){
+  //console.log ("user want to add caps")
+  Character_pool.push(...uppercase)
+} 
+if (lowerQ){
+  //console.log ("user want to add  lowers")
+} Character_pool.push(...lowercase)
+if (specialQ){
+ // console.log ("user want to add specials")
+ Character_pool.push(...symbols)
+} 
+
 
 
 
@@ -35,15 +55,15 @@ console.log(passwordLength, typeof passwordLength)
   // Write password to the #password input
   for (var i = 0; i < passwordLength; i++) {
     
-    console.log(i)
-      console.log(validChars.length)
+    // console.log(i)
+    //   console.log(validChars.length)
 
-      var num = getrandome (validChars.length)
+      var num = getrandome (Character_pool.length)
       console.log(num)
-      console.log(validChars[num])
+      //console.log(validChars[num])
       
-      password+= validChars[num]
-      console.log(password)
+      password+= Character_pool[num]
+      //console.log(password)
      
   }
 
